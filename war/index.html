@@ -1,27 +1,66 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
-  </head>
+<head>
+<meta charset="UTF-8">
+<title>Films Cloud Project</title>
+<link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+<script src="./scripts/ajax-utils.js"
+        type="text/javascript"></script>
+<script src="./scripts/ajax-data.js"
+        type="text/javascript"></script>
+</head>
+<body>
 
-  <body>
-    <h1>Hello App Engine!</h1>
-	
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href="filminfocloudservice">FilmInfoCloudService</a></td>
-      </tr>
-    </table>
-  </body>
+
+
+<div align=center>
+
+
+<fieldset>
+  <legend>Getting Data from Server, Building HTML Table of All films</legend>
+  <form action="/showfilms">
+  			<input type="hidden" value="show" name="opt"/>
+      		<input type="submit" value="Show Films"/>
+  </form>
+  <p/>
+  <div id="string-allFilm-table"></div>
+</fieldset>
+<p/>
+
+<fieldset>
+  <legend>Getting Data from Server, Building HTML Table with films with the title asked</legend>
+  <form action="/showfilm">
+   <label for="filmTitle">Film Title:</label>
+   <input type="text" name="filmTitle" id="filmTitle">
+   <input type="hidden" value="json" name="format"/>
+   <input type="button" value="Show Film(s)"/>
+  </form>
+  <p/>
+  <div id="string-one-film-table"></div>
+</fieldset>
+
+<fieldset>
+  <legend>ADDING one film: Building HTML Table with the new ID</legend>
+  <form action="/addonefilm">
+   <label for="filmName">Film name:</label>
+   <input type="text" id="name" name="name">
+   <label for="filmYear">Film year:</label>
+   <input type="text" id="year" name="year">
+   <label for="filmDirector">Film director:</label>
+   <input type="text" id="director" name="director">
+   <label for="filmDuration">Film duration:</label>
+   <input type="text" id="duration" name="duration">
+   <label for="filmCredits">Film credits:</label>
+   <input type="text" id="credits" name="credits">
+   <label for="filmReview">Film review:</label>
+   <input type="text" id="review" name="review">
+   <br/>
+   <input type="button" value="Add Film"/>
+  </form>
+  <p/>
+  <div id="string-one-addedfilm-table"></div>
+</fieldset>
+<p/>
+</div>
+</body> 
 </html>
