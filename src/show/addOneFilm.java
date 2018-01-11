@@ -29,14 +29,20 @@ public class addOneFilm extends HttpServlet {
     String filmDuration = request.getParameter("duration");
     String filmCredits = request.getParameter("credits");
     String filmReview = request.getParameter("review");
-  
+    String outputMessage = "";
+    try {
     int year = Integer.parseInt(filmYear);
     int duration = Integer.parseInt(filmDuration);
     Film film = new Film(filmTitle,year, filmDirector,duration, filmCredits, filmReview);
 
     FilmDAO.addFilm(film);
-    request.setAttribute("newID", "Film Added");
-    //String format = request.getParameter("format");
+    outputMessage = "Film Added";
+    }
+    catch (Exception e) {
+    	outputMessage = "Something went wrong! Maybe there is an uncorrect parametre.";
+    	System.out.println(e);
+    }
+    request.setAttribute("newID", outputMessage);
     String outputPage = "/WEB-INF/results/addNewID.jsp";
     response.setContentType("text/plain");
     
@@ -50,5 +56,5 @@ public class addOneFilm extends HttpServlet {
 	          HttpServletResponse response)
 	throws ServletException, IOException {
 	doGet(request, response);
-	}
+ }
 }

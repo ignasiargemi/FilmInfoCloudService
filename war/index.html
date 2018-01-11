@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <title>Films Cloud Project</title>
 <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
-<script src="./scripts/ajax-utils.js"
-        type="text/javascript"></script>
-<script src="./scripts/ajax-data.js"
-        type="text/javascript"></script>
 </head>
 <body>
 
@@ -32,8 +28,7 @@
   <form action="/showfilm">
    <label for="filmTitle">Film Title:</label>
    <input type="text" name="filmTitle" id="filmTitle">
-   <input type="hidden" value="json" name="format"/>
-   <input type="button" value="Show Film(s)"/>
+   <input type="submit" value="Show Film(s)"/>
   </form>
   <p/>
   <div id="string-one-film-table"></div>
@@ -46,16 +41,18 @@
    <input type="text" id="name" name="name">
    <label for="filmYear">Film year:</label>
    <input type="text" id="year" name="year">
+   <br/>
    <label for="filmDirector">Film director:</label>
    <input type="text" id="director" name="director">
    <label for="filmDuration">Film duration:</label>
    <input type="text" id="duration" name="duration">
+   <br/>
    <label for="filmCredits">Film credits:</label>
    <input type="text" id="credits" name="credits">
    <label for="filmReview">Film review:</label>
    <input type="text" id="review" name="review">
    <br/>
-   <input type="button" value="Add Film"/>
+   <input type="submit" value="Add Film"/>
   </form>
   <p/>
   <div id="string-one-addedfilm-table"></div>
