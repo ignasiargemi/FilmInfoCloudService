@@ -9,6 +9,9 @@ import Repository.FilmDAO;
 
 import java.util.*;
 
+/**
+ * Web Servlet to show films with a certain title from the DB
+ */
 @SuppressWarnings("serial")
 public class showFindFilm extends HttpServlet {
   @Override

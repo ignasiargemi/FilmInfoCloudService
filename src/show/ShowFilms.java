@@ -9,6 +9,9 @@ import Repository.FilmDAO;
 
 import java.util.*;
 
+/**
+ * Web Servlet to show all the films from the DB
+ */
 @SuppressWarnings("serial")
 public class ShowFilms extends HttpServlet {
   public void doGet(HttpServletRequest request,

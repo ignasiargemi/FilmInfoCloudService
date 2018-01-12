@@ -12,6 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement (name="film")
 @XmlAccessorType (XmlAccessType.FIELD)
 
+/**
+ * Film class with all the required parameters
+ */
 public class Film {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY) 

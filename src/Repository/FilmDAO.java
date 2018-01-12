@@ -9,16 +9,13 @@ import javax.jdo.Query;
 
 @SuppressWarnings("unchecked")
 public class FilmDAO {
-	
-	//Film oneFilm = null;
-	//Connection conn = null;
-    //Statement stmt = null;
 
-	private FilmDAO() {}
+	private FilmDAO() {}	
 	
-	
-   
-public static List<Film> getAllFilms(){
+	/**
+	 * Function to get All the films in an ArrayList
+	 */
+	public static List<Film> getAllFilms(){
 	   
 	   PersistenceManager pm = PMF.get().getPersistenceManager();
 		
@@ -32,9 +29,12 @@ public static List<Film> getAllFilms(){
 			q.closeAll();
 		}
 		return results;
-   }
-   
-   public static List<Film> getFilmByTitle(String name){
+	}
+	
+	/**
+	 * This function returns a Film object with a certain name introduced by the USER
+	 */
+	public static List<Film> getFilmByTitle(String name){
 	   name = name.toUpperCase();
 	  PersistenceManager pm = PMF.get().getPersistenceManager();
 
@@ -48,9 +48,12 @@ public static List<Film> getAllFilms(){
 			q.closeAll();
 		}
 		
-	  return results; // return first city in list
-   }
-
+	  return results;
+   	}
+	
+	/**
+	 * This function adds a film into the DB
+	 */
     public static void addFilm(Film film) {
     	PersistenceManager pm = PMF.get().getPersistenceManager();
     	try {
@@ -60,7 +63,9 @@ public static List<Film> getAllFilms(){
     	}
     }
     
-   
+    /**
+     * Function to create all the films at first time. Once it's executed, it's no more required
+     */
     public static void createAllFilms() {
   		Film film = null;
   		PersistenceManager pm = PMF.get().getPersistenceManager();

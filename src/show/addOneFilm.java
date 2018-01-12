@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import Domain.Film;
 import Repository.FilmDAO;
 
-
+/**
+ * Web Servlet to add a film from the DB
+ */
 public class addOneFilm extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request,
